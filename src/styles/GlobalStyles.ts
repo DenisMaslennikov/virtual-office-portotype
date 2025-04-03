@@ -38,7 +38,13 @@ const GlobalStyles = createGlobalStyle`
 
         /* Animation for dark mode switch */
 
-        transition: background-color 0.3s, border 0.3s;
+        transition: background-color 0.3s, border 0.3s, color 0.3s;
+    }
+
+    body {
+        color: var(--color-grey-800);
+        
+        min-height: 100vh;
     }
 
     button {
