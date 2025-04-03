@@ -1,5 +1,5 @@
 function AgileBoard() {
-  return <div></div>;
+  return <div>Agile Board</div>;
 }
 
 export default AgileBoard;

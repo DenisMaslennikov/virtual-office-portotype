@@ -1,5 +1,5 @@
 function Permissions() {
-  return <div></div>;
+  return <div>Permissions</div>;
 }
 
 export default Permissions;

@@ -1,5 +1,5 @@
 function Files() {
-  return <div></div>;
+  return <div>Files</div>;
 }
 
 export default Files;
