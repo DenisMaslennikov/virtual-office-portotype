@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
             --color-grey-800: #2c2c3d;
             --color-grey-900: #19171d;
         }
-        
+
         &.dark-mode {
             --color-grey-0: #19171d;
             --color-grey-50: #2c2c3d;
@@ -29,6 +29,58 @@ const GlobalStyles = createGlobalStyle`
             --color-grey-800: #f9f9fa;
             --color-grey-900: #fff;
         }
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+
+        /* Animation for dark mode switch */
+
+        transition: background-color 0.3s, border 0.3s;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    *:disabled {
+        cursor: not-allowed;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+        color: inherit;
+    }
+
+    select:disabled,
+    input:disabled {
+        background-color: var(--color-grey-200);
+        color: var(--color-grey-500);
     }
 `;
 
