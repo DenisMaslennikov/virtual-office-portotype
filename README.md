@@ -7,4 +7,6 @@
 4) Запустите Dev сервер `npm run dev`
 
 ## Требования:
-Для запуска проекта в системе должен быть установлен [Node.js](https://nodejs.org/) 
+Для запуска проекта в системе должен быть установлен [Node.js](https://nodejs.org/)
+
+## [Прошлая версия](https://github.com/DenisMaslennikov/virtual-office-react) созданная для изучения основ React.
