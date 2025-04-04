@@ -29,13 +29,16 @@ const GlobalStyles = createGlobalStyle`
             --color-grey-800: #f9f9fa;
             --color-grey-900: #fff;
         }
+
+        //--color-hover: #769eef;
+        --color-active: #769eef;
     }
 
     * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
-        
+
         /* Animation for dark mode switch */
         transition: background-color 0.3s, border 0.3s;
     }
@@ -43,9 +46,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         color: var(--color-grey-800);
         min-height: 100vh;
-        
+
         /* Animation for dark mode switch */
-        transition: color 0.3s;
+        transition: color 0.3s, background-color 0.3s;
     }
 
     button {

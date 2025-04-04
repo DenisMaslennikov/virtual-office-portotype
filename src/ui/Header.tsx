@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   background-color: var(${BACKGROUND_COLOR});
   grid-column: 1 / -1;
 
-  padding: 1rem 1rem;
+  padding: 0 1rem;
 
   display: flex;
   gap: 2.4rem;
