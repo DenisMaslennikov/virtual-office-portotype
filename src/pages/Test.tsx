@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
+// TODO Для экспериментов. Удалить.
+
 const Container = styled.div`
   display: flex;
   height: 100vh;
