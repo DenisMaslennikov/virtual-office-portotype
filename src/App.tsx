@@ -14,6 +14,7 @@ import Register from "./pages/Register.tsx";
 import Login from "./pages/Login.tsx";
 import PageNotFound from "./pages/PageNotFound.tsx";
 import ThemeContextProvider from "./context/Theme/ThemeContextProvider.tsx";
+import Test from "./pages/Test.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -44,6 +45,7 @@ function App() {
             <Route path="registion/:inviteId" element={<Register />} />
             <Route path="registion" element={<Register />} />
             <Route path="login" element={<Login />} />
+            <Route path="test" element={<Test />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
