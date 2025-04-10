@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { TEXT_MAIN_COLOR } from "../utils/constants.ts";
 
 const GlobalStyles = createGlobalStyle`
     :root {
@@ -44,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        color: var(--color-grey-800);
+        color: var( ${TEXT_MAIN_COLOR});
         min-height: 100vh;
 
         /* Animation for dark mode switch */

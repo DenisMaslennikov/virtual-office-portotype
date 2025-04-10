@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { BACKGROUND_COLOR, BORDER_COLOR } from "../utils/constants.ts";
+import MenuLinkList from "./MenuLinkList.tsx";
 
 const StyledSidebar = styled.aside`
   background-color: var(${BACKGROUND_COLOR});
@@ -9,7 +10,19 @@ const StyledSidebar = styled.aside`
 `;
 
 function Sidebar() {
-  return <StyledSidebar>Sidebar</StyledSidebar>;
+  return (
+    <StyledSidebar>
+      <MenuLinkList>
+        <MenuLinkList.Item>
+          Проекты
+          <MenuLinkList>
+            <MenuLinkList.Item>Проект 1</MenuLinkList.Item>
+            <MenuLinkList.Item>Проект 2</MenuLinkList.Item>
+          </MenuLinkList>
+        </MenuLinkList.Item>
+      </MenuLinkList>
+    </StyledSidebar>
+  );
 }
 
 export default Sidebar;
