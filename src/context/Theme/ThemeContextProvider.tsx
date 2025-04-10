@@ -1,9 +1,11 @@
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import ThemeContext from "./ThemeContext.ts";
+import useLocalStorageState from "../../hooks/useLocalStorageState.ts";
 
 function ThemeContextProvider({ children }: PropsWithChildren) {
-  const [isDarkMode, setDarkMode] = useState(
+  const [isDarkMode, setDarkMode] = useLocalStorageState(
     window.matchMedia("(prefers-color-scheme: dark-mode)").matches,
+    "isDarkMode",
   );
 
   useEffect(() => {
