@@ -4,7 +4,7 @@ import useLocalStorageState from "../../hooks/useLocalStorageState.ts";
 
 function ThemeContextProvider({ children }: PropsWithChildren) {
   const [isDarkMode, setDarkMode] = useLocalStorageState(
-    window.matchMedia("(prefers-color-scheme: dark-mode)").matches,
+    window.matchMedia("(prefers-color-scheme: dark-mode)").matches ?? false,
     "isDarkMode",
   );
 
