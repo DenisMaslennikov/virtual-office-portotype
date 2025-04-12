@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren, useCallback, useEffect, useMemo } from "react";
 import ThemeContext from "./ThemeContext.ts";
 import useLocalStorageState from "../../hooks/useLocalStorageState.ts";
 
@@ -18,12 +18,16 @@ function ThemeContextProvider({ children }: PropsWithChildren) {
     }
   }, [isDarkMode]);
 
-  function toggleTheme() {
+  const toggleTheme = useCallback(() => {
     setDarkMode((prevState) => !prevState);
-  }
+  }, [setDarkMode]);
+
+  const contextValue = useMemo(() => {
+    return { isDarkMode, toggleTheme };
+  }, [toggleTheme, isDarkMode]);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
