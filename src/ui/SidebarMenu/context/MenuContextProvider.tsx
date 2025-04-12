@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useCallback, useMemo } from "react";
 import MenuContext from "./MenuContext.ts";
 import useLocalStorageState from "../../../hooks/useLocalStorageState.ts";
 import type { MenuCollapseState } from "../types/MenuColapseState.ts";
@@ -9,18 +9,22 @@ function MenuContextProvider({ children }: PropsWithChildren) {
     "menuCollapsed",
   );
 
-  function toggleCollapse(id: string) {
-    setCollapsed((prev) => ({ ...prev, [id]: !prev[id] }));
-  }
+  const toggleCollapse = useCallback(
+    (id: string) => setCollapsed((prev) => ({ ...prev, [id]: !prev[id] })),
+    [setCollapsed],
+  );
 
-  function isCollapsed(id: string) {
-    return Boolean(collapsed[id]);
-  }
+  const isCollapsed = useCallback(
+    (id: string) => Boolean(collapsed[id]),
+    [collapsed],
+  );
+
+  const contextValue = useMemo(() => {
+    return { toggleCollapse, isCollapsed };
+  }, [toggleCollapse, isCollapsed]);
 
   return (
-    <MenuContext.Provider value={{ isCollapsed, toggleCollapse }}>
-      {children}
-    </MenuContext.Provider>
+    <MenuContext.Provider value={contextValue}>{children}</MenuContext.Provider>
   );
 }
 
